@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Bali - Destination Page</title>
+  <style>
+    /* Animation Keyframes */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInFromTop {
+      from {
+        opacity: 0;
+        transform: translateY(-100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -200px 0;
+      }
+      100% {
+        background-position: calc(200px + 100%) 0;
+      }
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('bali-header.jpg') no-repeat center center/cover;
+      height: 300px;
+      color: rgb(210, 207, 207);
+      text-align: center;
+      padding-top: 100px;
+      animation: slideInFromTop 1.5s ease-out;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      animation: shimmer 3s infinite;
+    }
+
+    header h1 {
+      font-size: 3em;
+      text-shadow: 2px 2px 4px #000;
+      animation: bounce 2s ease-in-out 1s both;
+    }
+
+    .content {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      margin-top: 30px;
+      margin-bottom: 30px;
+      animation: fadeInUp 1s ease-out 0.5s both;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .content::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #5578e2, #667eea);
+      animation: shimmer 2s infinite;
+    }
+
+    .content h2 {
+      animation: fadeInLeft 1s ease-out 1s both;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      animation: fadeInLeft 1s ease-out 1.2s both;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .content img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin: 15px 0;
+      transition: all 0.4s ease;
+      animation: zoomIn 0.8s ease-out;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .content img:hover {
+      transform: scale(1.05) rotate(1deg);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      z-index: 10;
+    }
+
+    .content img:nth-child(odd) {
+      animation-delay: 0.2s;
+    }
+
+    .content img:nth-child(even) {
+      animation-delay: 0.4s;
+    }
+
+    .highlights {
+      margin-top: 30px;
+      animation: fadeInUp 1s ease-out 1.5s both;
+    }
+
+    .highlights h2 {
+      color: #333;
+      animation: fadeInLeft 1s ease-out 1.7s both;
+      border-bottom: 3px solid #667eea;
+      padding-bottom: 10px;
+    }
+
+    .highlights ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .highlights li {
+      padding: 10px 0;
+      margin: 5px 0;
+      padding-left: 30px;
+      position: relative;
+      animation: fadeInLeft 0.8s ease-out;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+    }
+
+    .highlights li:nth-child(1) { animation-delay: 2s; }
+    .highlights li:nth-child(2) { animation-delay: 2.2s; }
+    .highlights li:nth-child(3) { animation-delay: 2.4s; }
+    .highlights li:nth-child(4) { animation-delay: 2.6s; }
+    .highlights li:nth-child(5) { animation-delay: 2.8s; }
+
+    .highlights li::before {
+      content: '🏛️';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      font-size: 1.2em;
+    }
+
+    .highlights li:hover {
+      background: linear-gradient(90deg, rgba(102, 126, 234, 0.1), transparent);
+      transform: translateX(10px);
+      padding-left: 40px;
+    }
+
+    footer {
+      text-align: center;
+      background: linear-gradient(135deg, #333 0%, #555 100%);
+      color: white;
+      padding: 20px 0;
+      margin-top: 30px;
+      animation: fadeInUp 1s ease-out 3s both;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 30px;
+      animation: fadeInUp 1s ease-out 3.2s both;
+    }
+
+    .back-link a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+      padding: 10px 20px;
+      border: 2px solid #667eea;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .back-link a:hover {
+      background: #667eea;
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Responsive animations */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+      
+      .content {
+        margin: 20px;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Welcome to Raigad</h1>
+</header>
+
+<div class="content">
+  <h2>Discover the Beauty of Raigad</h2>
+  <p>Raigad Fort, a historic hill fort in Maharashtra, is known for its rich history, stunning views, and impressive architecture. It served as the capital of the Maratha Empire under Chhatrapati Shivaji Maharaj. The fort is accessible by a ropeway or a climb of approximately 1737 steps. </p>
+  
+  <img src="raigad.png" alt="Raigad">
+  <img src="raigad1.png" alt="Raigad">
+  <img src="raigad2.png" alt="Raigad">
+  <img src="raigad3.png" alt="Raigad">
+  <img src="raigad4.png" alt="Raigad">
+
+  <div class="highlights">
+    <h2>Highlights</h2>
+    <ul>
+      <li>Capital of Chhatrapati Shivaji Maharaj's kingdom</li>
+      <li>Located at 2,700 ft above sea level in the Sahyadri range</li>
+      <li>Accessible via 1,700 steps or ropeway</li>
+      <li>Major trekking and heritage tourism spot</li>
+    </ul>
+  </div>
+</div>
+<body>
+    <header>
+  <h1>Welcome to Rajgad</h1>
+</header>
+
+<div class="content">
+  <h2>Discover the Beauty of Rajgad</h2>
+  <p>Rajgad Fort served as the first capital of the Maratha Empire under Chhatrapati Shivaji Maharaj. Nestled in the Sahyadri mountain range at an elevation of about 4,300 feet, the fort is known for its majestic presence and historical importance.</p>
+  
+  <img src="rajgad.png" alt="Rajgad">
+  <img src="rajgad1.png" alt="Rajgad">
+  <img src="rajgad3.png" alt="Rajgad">
+  <img src="rajgaad5.png" alt="Rajgad">
+
+  <div class="highlights">
+    <h2>Highlights</h2>
+    <ul>
+      <li>Former capital of the Maratha Empire before Raigad</li>
+      <li>Built on a hill 4,300 ft high in the Sahyadris</li>
+      <li>Shivaji Maharaj spent over 25 years here</li>
+      <li>Rich in history, architecture, and Maratha valor</li>
+      <li>Surrounded by lush greenery and mountain views</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+<body>
+    <header>
+  <h1>Welcome to Panhala</h1>
+</header>
+
+<div class="content">
+  <h2>Discover the Beauty of Panhala</h2>
+  <p>Panhala Fort, located near Kolhapur in Maharashtra, is one of the largest and most historic forts in the region. Built during the 12th century and later ruled by the Marathas, it played a key role in the life of Chhatrapati Shivaji Maharaj. The fort is known for its massive fortifications, hidden tunnels, and scenic surroundings. It was the site of the famous escape of Shivaji Maharaj from Siddi Johar's siege, showcasing his strategic brilliance. Today, Panhala is a popular destination for history lovers and offers beautiful views of the Sahyadri ranges.
+
+</p>
+  
+  <img src="panhala.png" alt="Panhala">
+  <img src="panhala1.png" alt="Panhala">
+  <img src="Panhala2.png" alt="Panhala">
+  <img src="Panhala3.png" alt="Panhala">
+  <img src="panhala5.png" alt="Panhala">
+
+
+  <div class="highlights">
+    <h2>Highlights</h2>
+    <ul>
+      <li>Located near Kolhapur in Maharashtra</li>
+      <li>One of the largest forts in the Deccan region</li>
+      <li>Built in the 12th century by the Shilahara dynasty</li>
+      <li>ater an important Maratha stronghold under Shivaji Maharaj</li>
+      <li>Features massive stone walls, bastions, and secret tunnels</li>
+    </ul>
+  </div>
+</div>
+<div class="back-link">
+      <p><a href="index.html">&larr; Back to Home</a></p>
+    </div>
+  </div>
+
+</body>
+
+<footer>
+  &copy; 2025 Explore Destinations. All rights reserved.
+</footer>
+
+</body>
+</html>

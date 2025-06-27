@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Explore the World | Travel Agency</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Animation Keyframes */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes slideInFromTop {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Apply animations to elements */
+    header {
+      animation: slideInFromTop 1s ease-out;
+    }
+
+    .hero-text h2 {
+      animation: fadeInLeft 1.2s ease-out 0.3s both;
+    }
+
+    .hero-text p {
+      animation: fadeInLeft 1.2s ease-out 0.6s both;
+    }
+
+    .hero-text .btn {
+      animation: fadeInLeft 1.2s ease-out 0.9s both;
+    }
+
+    .destinations h2 {
+      animation: fadeInUp 1s ease-out 1.2s both;
+    }
+
+    .card {
+      animation: fadeInUp 1s ease-out;
+      transition: all 0.3s ease;
+    }
+
+    .card:nth-child(1) {
+      animation-delay: 1.4s;
+    }
+
+    .card:nth-child(2) {
+      animation-delay: 1.6s;
+    }
+
+    .card:nth-child(3) {
+      animation-delay: 1.8s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn {
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      animation: pulse 0.6s ease-in-out;
+      transform: scale(1.05);
+    }
+
+    nav a {
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      transform: translateY(-2px);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Loading animation for images */
+    img {
+      transition: opacity 0.5s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Explore the World</h1>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="destination.html">Destinations</a></li>
+          <li><a href="packages.html">Packages</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Discover Beautiful Places </h2>
+      <p>Your journey begins with us.</p>
+      <a href="booking.html" class="btn">Book Now</a>
+    </div>
+  </section>
+
+  <section class="destinations">
+    <h2>Featured Destinations</h2>
+    <div class="destination-cards">
+      <div class="card">
+        <img src="pic3.png" alt="Raigad">
+        <h3>Raigad Fort</h3>
+        <p>The City of Light awaits you.</p>
+      </div>
+      <div class="card">
+        <img src="pic1.png" alt="Rajgad">
+        <h3>Rajgad Fort</h3>
+        <p>Relax in tropical paradise.</p>
+      </div>
+      <div class="card">
+        <img src="pic2.png" alt="Panhala">
+        <h3>Panhala Fort</h3>
+        <p>The city that never sleeps.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Explore the World Travel Agency. All rights reserved.</p>
+  </footer>
+
+</body>
+
+
+</html>
